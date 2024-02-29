@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      | Home | Pg Dn| Pg Up| End  |
+ * |      |      |  Cut | Copy | Paste|             |      | Home | Pg Dn| Pg Up| End  |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_preonic_grid(
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TILD, KC_HOME,  C(KC_LEFT), KC_UP,    C(KC_RIGHT), KC_END,   KC_CIRC,  KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_F11,
   KC_CAPS, _______,  KC_LEFT,    KC_DOWN,  KC_RIGHT,    _______,  _______,  KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_F12,
   _______, _______,  _______,    _______,  _______,     _______,  _______,  _______, _______, _______, _______, _______,
-  _______, _______,  _______,    _______,  _______,     KC_MPLY,  KC_MPLY,  _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
+  _______, _______,  S(KC_DEL),    C(KC_INS),  S(KC_INS),     KC_MPLY,  KC_MPLY,  _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 
 /* Raise
