@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
      * | Caps |      | Left | Down | Right|   $  |-------.    ,-------|   ^  |   _  |   +  |   [  |   ]  | F12  |
      * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
-     * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      | Enter|
+     * |      |      |  Cut | Copy | Paste|      |-------|    |-------|      |      |      |      |      | Enter|
      * `-----------------------------------------/       /     \      \-----------------------------------------'
      *            | LCTR | LAlt | LGUI |LOWER | / PLAY  /       \ PLAY \  |RAISE | RCTR | RAlt | RGUI |
      *            |      |      |      |      |/       /         \      \ |      |      |      |      |
@@ -304,28 +304,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_COPY:
             if (record->event.pressed) {
                 register_mods(mod_config(MOD_LCTL));
-                register_code(KC_C);
+                register_code(KC_INS);
             } else {
                 unregister_mods(mod_config(MOD_LCTL));
-                unregister_code(KC_C);
+                unregister_code(KC_INS);
             }
             return false;
         case KC_PASTE:
             if (record->event.pressed) {
-                register_mods(mod_config(MOD_LCTL));
-                register_code(KC_V);
+                register_mods(mod_config(MOD_LSFT));
+                register_code(KC_INS);
             } else {
-                unregister_mods(mod_config(MOD_LCTL));
-                unregister_code(KC_V);
+                unregister_mods(mod_config(MOD_LSFT));
+                unregister_code(KC_INS);
             }
             return false;
         case KC_CUT:
             if (record->event.pressed) {
-                register_mods(mod_config(MOD_LCTL));
-                register_code(KC_X);
+                register_mods(mod_config(MOD_LSFT));
+                register_code(KC_DEL);
             } else {
-                unregister_mods(mod_config(MOD_LCTL));
-                unregister_code(KC_X);
+                unregister_mods(mod_config(MOD_LSFT));
+                unregister_code(KC_DEL);
             }
             return false;
             break;
